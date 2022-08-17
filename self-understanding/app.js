@@ -1,5 +1,6 @@
 const aubergine = document.querySelector('.closed');
 const peach = document.querySelector('.open');
+const sweat = document.querySelector('sweat');
 
 //event listener
 

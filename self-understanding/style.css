@@ -26,6 +26,10 @@ body {
     display: none;
 }
 
+.sweat {
+    display: none;
+}
+
 .active {
     display: block;
 }

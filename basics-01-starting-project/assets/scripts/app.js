@@ -1,8 +1,16 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-currentResult = (currentResult + 10) * 3 / 2 - 1;
+function add(num1, num2){
+    const result = num1 + num2;
+    alert('The result is: ' + result);
+}
 
-let calculationDescription = `( ${defaultResult} + 10) * 3 / 2 - 1`;
+add(1,2);
+add(12,10);
+
+currentResult = (currentResult + 10) *  4/ 2 - 1;
+
+let calculationDescription = `( ${defaultResult} + 10) * 4 / 2 - 1`;
 
 outputResult(currentResult, calculationDescription);  

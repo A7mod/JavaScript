@@ -1,16 +1,15 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-function add(num1, num2){
-    const result = num1 + num2;
-    alert('The result is: ' + result);
+function add(){
+    const calcDescription = `${currentResult} + ${userInput.value}`
+    currentResult = currentResult + parseInt(userInput.value);
+    outputResult(currentResult, calcDescription);
+
 }
 
-add(1,2);
-add(12,10);
+addBtn.addEventListener('click', add);
 
-currentResult = (currentResult + 10) *  4/ 2 - 1;
+//let calculationDescription = `( ${defaultResult} + 10) * 4 / 2 - 1`;
 
-let calculationDescription = `( ${defaultResult} + 10) * 4 / 2 - 1`;
-
-outputResult(currentResult, calculationDescription);  
+//outputResult(currentResult, calculationDescription);  

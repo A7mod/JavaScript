@@ -6,16 +6,19 @@ function getUserNumberInput(){
 
 }
 
-function add(){
-    const enteredNumber = getUserNumberInput();
-    const calcDescription = `${currentResult} + ${enteredNumber}`
-    currentResult = currentResult + enteredNumber;
+function createWriteOutput(operator, resultBefore, calcNumber){
+    const calcDescription = `${resultBefore} ${operator} ${calcNumber}`;
     outputResult(currentResult, calcDescription);
 
 }
 
+function add(){
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
+    currentResult = currentResult + enteredNumber;
+    createWriteOutput('+', initialResult, enteredNumber);
+    
+}
+
 addBtn.addEventListener('click', add);
 
-//let calculationDescription = `( ${defaultResult} + 10) * 4 / 2 - 1`;
-
-//outputResult(currentResult, calculationDescription);  

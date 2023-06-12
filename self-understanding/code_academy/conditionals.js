@@ -10,7 +10,7 @@ if(sale){
 
 
 // very basic basic conditionals here man, I hate doing it again and again!! all over again
-let high = true;
+let high = false;
 if(high){
     console.log("Boy you high rn?")
 }

@@ -10,11 +10,11 @@ if(sale){
 
 
 // very basic basic conditionals here man, I hate doing it again and again!! all over again
-let high = false;
-if(high){
+let high = 'mari';
+if(high === 'weed'){
     console.log("Boy you high rn?")
 }
-else if(!high) {
+else if(high === 'intense') {
     console.log("Dude you must do something about it!")
 }
 else {

@@ -30,7 +30,7 @@ function add(){
     const initialResult = currentResult;
     currentResult += enteredNumber;
     createWriteOutput('+', initialResult, enteredNumber);
-    
+    writeToLog('ADD', initialResult, enteredNumber, currentResult);
 
     }
 
@@ -40,6 +40,7 @@ function subtract(){
     const initialResult = currentResult;
     currentResult -= enteredNumber;
     createWriteOutput('-', initialResult, enteredNumber);
+    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
 }
 
 function multiply(){
@@ -47,6 +48,7 @@ function multiply(){
     const initialResult = currentResult;
     currentResult *= enteredNumber;
     createWriteOutput('*', initialResult, enteredNumber);
+    writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult);
 }
 
 function divide(){
@@ -54,6 +56,7 @@ function divide(){
     const initialResult = currentResult;
     currentResult /= enteredNumber;
     createWriteOutput('/', initialResult, enteredNumber);
+    writeToLog('DIVIDE', initialResult, enteredNumber, currentResult);
 }
 
 addBtn.addEventListener('click', add);

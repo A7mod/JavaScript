@@ -25,22 +25,30 @@ function writeToLog(opId, prevResult, opNum, newResult) {
 
 }
 
-function add(){
+function calculateResult(calculationType) {
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
-    currentResult += enteredNumber;
-    createWriteOutput('+', initialResult, enteredNumber);
-    writeToLog('ADD', initialResult, enteredNumber, currentResult);
-
+    let mathOperator;
+    if (calculationType === 'ADD'){
+        currentResult += enteredNumber;
+        mathOperator = '+';
+    } else {
+        currentResult -= enteredNumber;
+        mathOperator = '-';
     }
+    
+    createWriteOutput(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculateType, initialResult, enteredNumber, currentResult);
+
+}
+
+function add(){
+    calculateResult('ADD');
+}
 
 
 function subtract(){
-    const enteredNumber = getUserNumberInput();
-    const initialResult = currentResult;
-    currentResult -= enteredNumber;
-    createWriteOutput('-', initialResult, enteredNumber);
-    writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
+    calculateResult('SUBTRACT');
 }
 
 function multiply(){

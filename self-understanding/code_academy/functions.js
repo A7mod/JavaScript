@@ -5,4 +5,11 @@ function powerMove(item1 = 'Interesting', twice = 900, power = 'Less Interesting
     console.log(`Nice way to be ${power}`);
 }
 
-powerMove();
+// powerMove();
+
+// understanding return as well
+function monitors(row, col) {
+    return row * col;    // basic return etc
+}
+const nicole = monitors(13, 10);
+console.log(nicole); 

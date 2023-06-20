@@ -11,3 +11,14 @@ plantNeedsWater();
 */
 
 const plantNeedsWater = day => day === 'Wednesday' ? true : false;
+
+// scope scopeeee
+
+const city = 'New York City';
+
+const logCitySkyline = () => {
+    let skyscraper = 'Empire State';
+    return 'the stars over the ' + skyscraper + ' in the ' + city;
+};
+
+console.log(logCitySkyline());

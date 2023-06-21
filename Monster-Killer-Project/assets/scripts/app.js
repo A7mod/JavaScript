@@ -1,5 +1,7 @@
 const ATTACK_VALUE = 10;
+const STRONG_ATTACK_HANDLER = 17;
 const MONSTER_ATTACK_VALUE = 14;
+
 
 let chosenMaxLife = 100;
 let currentMonsterHealth = chosenMaxLife;
@@ -22,4 +24,10 @@ function attackHandler() {
     }
 }
 
+function strongAttackHandler () {
+    
+
+}
+
 attackBtn.addEventListener('click', attackHandler);
+ttackBtn.addEventListener('click', strongAttackHandler);

@@ -39,5 +39,10 @@ function strongAttackHandler () {
 
 }
 
+function logHandler() {
+
+}
+
 attackBtn.addEventListener('click', attackHandler);
 strongAttackBtn.addEventListener('click', strongAttackHandler);
+healBtn.addEventListener('click', logHandler);

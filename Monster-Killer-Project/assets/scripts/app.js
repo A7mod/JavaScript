@@ -11,8 +11,6 @@ let currentPlayerHealth = chosenMaxLife;
 adjustHealthBars(chosenMaxLife);
 
 function endround() {
-    const damage = dealMonsterDamage(maxDamage);
-    currentMonsterHealth -= damage;
     const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
     currentPlayerHealth -= playerDamage;
     if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
@@ -31,6 +29,8 @@ function attackMonster(mode){
     } else if(mode === 'STRONG_ATTACK'){
         maxDamage = STRONG_ATTACK_HANDLER;
     }
+    const damage = dealMonsterDamage(maxDamage);
+    currentMonsterHealth -= damage;
     endround();   
 }
 
@@ -45,6 +45,7 @@ function strongAttackHandler () {
 
 function healPlayerHandler() {
     increasePlayerHealth(HEAL_VALUE);
+    currentPlayerHealth += HEAL_VALUE;
     endround();
 }
 

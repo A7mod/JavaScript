@@ -45,6 +45,7 @@ function strongAttackHandler () {
 
 function healPlayerHandler() {
     increasePlayerHealth(HEAL_VALUE);
+    endround();
 }
 
 attackBtn.addEventListener('click', attackHandler);

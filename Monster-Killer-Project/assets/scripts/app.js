@@ -6,6 +6,7 @@ const HEAL_VALUE = 20;
 const MODE_ATTACK = 'ATTACK';
 const MODE_STRONG_ATTACK = 'STRONG_ATTACK';
 
+
 const enteredValue = prompt('Maximum life for you and the mosnter.', '100')
 let chosenMaxLife = parseInt(enteredValue)
 
@@ -14,8 +15,11 @@ if (isNaN(chosenMaxLife) || chosenMaxLife <= 0){
 }
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
+let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
+
+function 
 
 function reset() {
     currentMonsterHealth = chosenMaxLife;
@@ -24,8 +28,16 @@ function reset() {
 }
 
 function endround() {
+    const initialPlayerHealth = currentPlayerHealth;
     const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
     currentPlayerHealth -= playerDamage;
+
+    if (currentPlayerHealth <= 0 && hasBonusLife) {
+        hasBonusLife = false;
+        removeBonusLife();
+        currentPlayerHealth = initialPlayerHealth;
+        alert('You would be dead MOFO, Bonus Life saved you. There are no Bonus Lives in real life.')
+    }
     if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
         alert('You won!');
         reset();

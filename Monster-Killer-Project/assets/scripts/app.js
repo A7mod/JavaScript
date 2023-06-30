@@ -85,6 +85,12 @@ function endround() {
     const initialPlayerHealth = currentPlayerHealth;
     const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
     currentPlayerHealth -= playerDamage;
+    writeToLog(
+        LOG_EVENT_MONSTER_ATTACK,
+        playerDamage,
+        currentMonsterHealth,
+        currentPlayerHealth
+    );
 
     if (currentPlayerHealth <= 0 && hasBonusLife) {
         hasBonusLife = false;
@@ -95,12 +101,30 @@ function endround() {
     }
     if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
         alert('You won!');
+        writeToLog(
+            LOG_EVENT_GAME_OVER,
+            'PLAYER WON',
+            currentMonsterHealth,
+            currentPlayerHealth
+        );
         reset();
     } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0){
         alert('You Lost Loser!!');
+        writeToLog(
+            LOG_EVENT_GAME_OVER,
+            'MONSTER WON',
+            currentMonsterHealth,
+            currentPlayerHealth
+        );
         reset();
     } else if (currentMonsterHealth <= 0 && currentPlayerHealth <= 0) {
         alert('Draw!');
+        writeToLog(
+            LOG_EVENT_GAME_OVER,
+            'TIS A DRAW',
+            currentMonsterHealth,
+            currentPlayerHealth
+        );
         reset();
     }
 }

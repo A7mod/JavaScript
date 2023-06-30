@@ -81,6 +81,30 @@ function reset() {
     resetGame(chosenMaxLife);
 }
 
+
+function attackMonster(mode){
+    let maxDamage;
+    let logEvent;
+    if(mode === MODE_ATTACK) {
+        maxDamage = ATTACK_VALUE;
+        logEvent = LOG_EVENT_PLAYER_ATTACK;
+
+    } else if(mode === MODE_STRONG_ATTACK){
+        maxDamage = STRONG_ATTACK_HANDLER;
+        logEvent = LOG_EVENT_PLAYER_STRONG_ATTACK;
+    }
+    const damage = dealMonsterDamage(maxDamage);
+    currentMonsterHealth -= damage;
+    writeToLog(
+        logEvent,
+        damage,
+        currentMonsterHealth,
+        currentPlayerHealth
+    );
+
+    endround();   
+} 
+
 function endround() {
     const initialPlayerHealth = currentPlayerHealth;
     const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
@@ -99,6 +123,7 @@ function endround() {
         alert('You would be dead MOFO, Bonus Life saved you. There are no Bonus Lives in real life.');
         setPlayerHealth(initialPlayerHealth);
     }
+
     if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
         alert('You won!');
         writeToLog(
@@ -129,17 +154,7 @@ function endround() {
     }
 }
 
-function attackMonster(mode){
-    let maxDamage;
-    if(mode === MODE_ATTACK) {
-        maxDamage = ATTACK_VALUE;
-    } else if(mode === MODE_STRONG_ATTACK){
-        maxDamage = STRONG_ATTACK_HANDLER;
-    }
-    const damage = dealMonsterDamage(maxDamage);
-    currentMonsterHealth -= damage;
-    endround();   
-}
+
 
 function attackHandler() {
     attackMonster('ATTACK');
@@ -160,8 +175,16 @@ function healPlayerHandler() {
     }
 
 
-    increasePlayerHealth(HEAL_VALUE);
-    currentPlayerHealth += HEAL_VALUE;
+    increasePlayerHealth(healValue);
+    currentPlayerHealth += healValue;
+    writeToLog(
+        LOG_EVENT_PLAYER_HEAL,
+        healValue,
+        currentMonsterHealth,
+        currentPlayerHealth
+    );
+
+
     endround();
 }
 

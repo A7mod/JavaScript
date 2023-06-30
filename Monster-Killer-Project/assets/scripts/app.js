@@ -36,7 +36,8 @@ function endround() {
         hasBonusLife = false;
         removeBonusLife();
         currentPlayerHealth = initialPlayerHealth;
-        alert('You would be dead MOFO, Bonus Life saved you. There are no Bonus Lives in real life.')
+        alert('You would be dead MOFO, Bonus Life saved you. There are no Bonus Lives in real life.');
+        setPlayerHealth(initialPlayerHealth);
     }
     if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
         alert('You won!');

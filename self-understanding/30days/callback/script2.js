@@ -20,8 +20,8 @@ function approvingData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log("3) Approving Data ....");
-      resolve();
-    }, 2000);
+      reject("Error: Not Fulfilled!!");
+    }, 1000);
   });
 }
 function approved() {

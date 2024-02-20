@@ -21,7 +21,8 @@ function approvingData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log("3) Approving Data ....");
-      reject("Error: Not Fulfilled!!");
+      //   reject("Error: Not Fulfilled!!");
+      resolve();
     }, 1000);
   });
 }
@@ -54,11 +55,13 @@ function approved() {
 
 async function Ex() {
   await loadingData();
-  await collectingData();
+  //await collectingData();
   await approvingData();
   await approved();
 }
 
-Ex().catch((err) => {
-  console.log(err);
-});
+Ex()
+  .then(collectingData)
+  .catch((err) => {
+    console.log(err);
+  });

@@ -18,4 +18,4 @@ let onReject = (err) => {
   console.log(err);
 };
 
-fun(true).then(onResolve).catch(onReject);
+fun(false).then(onResolve).catch(onReject);

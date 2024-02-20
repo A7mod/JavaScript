@@ -2,8 +2,10 @@
 
 console.log("This");
 
-setTimeout(() => {
+setTimeout(fun, 4000);
+
+function fun() {
   console.log("Async");
-}, 4000);
+}
 
 console.log("Maybe");

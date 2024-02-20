@@ -2,7 +2,7 @@
 
 console.log("This");
 
-setTimeout(fun, 4000);
+setTimeout(fun, 0); // if we put value zero, the stack prevents functions to get manipulated in their place.
 
 function fun() {
   console.log("Async");

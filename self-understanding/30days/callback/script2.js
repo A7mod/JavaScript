@@ -13,7 +13,7 @@ function collectingData() {
     setTimeout(() => {
       console.log("2) Collecting Data ....");
       resolve();
-    }, 3000); // while this one is taking 5 seconds after the 4 secs
+    }, 2000); // while this one is taking 5 seconds after the 4 secs
   });
 }
 function approvingData() {
@@ -21,7 +21,7 @@ function approvingData() {
     setTimeout(() => {
       console.log("3) Approving Data ....");
       resolve();
-    }, 3000);
+    }, 2000);
   });
 }
 function approved() {
@@ -41,4 +41,4 @@ function approved() {
 // we use promises to get away from this hell
 
 // calling those functions with promises
-loadingData().then(collectingData).then(approvingData);
+loadingData().then(collectingData).then(approvingData).then(approved);

@@ -2,6 +2,7 @@
 
 function loadingData() {
   return new Promise((resolve, reject) => {
+    console.log("Processing .. .. .. ");
     setTimeout(() => {
       console.log("1) Loading Data ....");
       resolve();
@@ -41,4 +42,12 @@ function approved() {
 // we use promises to get away from this hell
 
 // calling those functions with promises
-loadingData().then(collectingData).then(approvingData).then(approved);
+loadingData()
+  .then(collectingData)
+  .then(approvingData)
+  .then(approved)
+  .catch((err) => {
+    console.log(err);
+  });
+
+// a better way is to use async await

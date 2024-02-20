@@ -13,3 +13,14 @@
 // ----------------------------------------------------
 
 // Moving forward to callback now.
+
+function fun(val) {
+  console.log(val);
+}
+
+function add(a, b, callback) {
+  let sum = a + b;
+  callback(sum); // simply one function calling another function
+}
+
+add(5, 10, fun);

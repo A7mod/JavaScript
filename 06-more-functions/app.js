@@ -17,7 +17,7 @@ const getPlayerChoice = () => {
   ).toUpperCase();
   if (selection !== ROCK && selection !== PAPER && selection !== SCISSORS) {
     alert(`Invalid choice! We chose ${DEFAULT_USER_CHOICE} for you.`);
-    return DEFAULT_USER_CHOICE;
+    return;
   }
   return selection;
 };
@@ -57,7 +57,13 @@ startGameBtn.addEventListener("click", function () {
   const playerChoice = getPlayerChoice();
   //console.log(playerChoice);
   const computerChoice = getComputerChoice();
-  const winner = getWinner(computerChoice, playerChoice);
+  let winner;
+  if (playerChoice) {
+    winner = getWinner(computerChoice, playerChoice);
+  } else {
+    winner = getWinner(computerChoice); // passing only one parameter here, JS is a forgiving langauge perhaps
+  }
+
   console.log(winner);
   let message = `You picked ${playerChoice} & computer picked ${computerChoice},`;
   if (winner === RESULT_DRAW) {

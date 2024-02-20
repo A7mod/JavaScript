@@ -33,7 +33,7 @@ const getComputerChoice = () => {
   }
 };
 
-const getWinner = (cChoice, pChoice) => {
+const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) => {
   // arrow funs
   if (cChoice === pChoice) {
     return RESULT_DRAW;
@@ -65,7 +65,9 @@ startGameBtn.addEventListener("click", function () {
   }
 
   console.log(winner);
-  let message = `You picked ${playerChoice} & computer picked ${computerChoice},`;
+  let message = `You picked ${
+    playerChoice || DEFAULT_USER_CHOICE
+  } & computer picked ${computerChoice},`;
   if (winner === RESULT_DRAW) {
     message = message + ` it's a draw!`;
   } else if (winner === RESULT_PLAYER_WINS) {

@@ -1,9 +1,10 @@
 // callback hell
 
-function loadingData() {
+function loadingData(callback) {
   setTimeout(() => {
     console.log("1) Loading Data ....");
-  }, 4000);
+    callback();
+  }, 4000); // this is taking 4 secs
 }
 function collectingData() {
   console.log("2) Collecting Data ....");
@@ -15,10 +16,10 @@ function approved() {
   console.log("4) Approved!");
 }
 
-loadingData();
+loadingData(function () {
+  collectingData();
 
-collectingData();
+  approvingData();
 
-approvingData();
-
-approved();
+  approved();
+});

@@ -1,13 +1,15 @@
 // understanding set timeout
 
-console.log("This");
+// console.log("This");
 
-setTimeout(fun, 0); // if we put value zero, the stack prevents functions to get manipulated in their place.
+// setTimeout(fun, 0); // if we put value zero, the stack prevents functions to get manipulated in their place.
 
-function fun() {
-  console.log("Async");
-}
+// function fun() {
+//   console.log("Async");
+// }
 
-console.log("Maybe");
+// console.log("Maybe");
+
+// ----------------------------------------------------
 
 // Moving forward to callback now.

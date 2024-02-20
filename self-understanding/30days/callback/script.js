@@ -2,6 +2,8 @@
 
 console.log("This");
 
-console.log("Maybe");
+setTimeout(() => {
+  console.log("Async");
+}, 4000);
 
-console.log("Async");
+console.log("Maybe");

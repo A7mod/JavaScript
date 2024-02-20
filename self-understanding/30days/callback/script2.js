@@ -54,8 +54,11 @@ function approved() {
 
 async function Ex() {
   await loadingData();
+  await collectingData();
   await approvingData();
   await approved();
 }
 
-Ex();
+Ex().catch((err) => {
+  console.log(err);
+});

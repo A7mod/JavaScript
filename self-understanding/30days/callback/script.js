@@ -9,3 +9,5 @@ function fun() {
 }
 
 console.log("Maybe");
+
+// Moving forward to callback now.

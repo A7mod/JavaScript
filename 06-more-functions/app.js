@@ -78,3 +78,6 @@ startGameBtn.addEventListener("click", function () {
   alert(message);
   gameIsRunning = false;
 });
+
+//  that's the end of the game perhaps, sadly.
+// you were waiting for a good UI? LOL!!

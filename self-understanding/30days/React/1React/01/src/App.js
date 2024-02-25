@@ -1,10 +1,11 @@
+import "./App.css";
 function App() {
   // how to assign values? Use JSX.
   let a = 2;
   return (
     <div>
       {a}
-      <h1>Hello, I am Component. </h1>
+      <h1 className="main">Hello, I am Component. </h1>
       <p>This is Tutorial of React. </p>;
     </div>
   );

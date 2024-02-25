@@ -7,8 +7,5 @@ root.render(
   <React.StrictMode>
     Hello, Hi
     <App />
-    <App />
-    <App />
-    <App />
   </React.StrictMode>
 );

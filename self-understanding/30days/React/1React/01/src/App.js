@@ -6,7 +6,10 @@ function App() {
     <div>
       {a}
       <h1 className="main">Hello, I am Component. </h1>
-      <p>This is Tutorial of React. </p>;
+      <p style={{ backgroundColor: "blue", color: "white" }}>
+        This is Tutorial of React.{" "}
+      </p>
+      ;
     </div>
   );
   // wrapping Components with <></>. Simple
